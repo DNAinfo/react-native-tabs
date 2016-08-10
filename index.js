@@ -52,6 +52,7 @@ var styles = StyleSheet.create({
         right:0,
         left:0,
         height:50,
+        paddingTop:30,
         opacity:1,
         backgroundColor:'transparent',
         flexDirection: 'row',
