@@ -30,8 +30,9 @@ class Tabs extends Component {
 
     componentWillMount(){
         if (Platform.OS==='android') {
-            Keyboard.addListener('keyboardDidShow', this.keyboardWillShow);
-            Keyboard.addListener('keyboardDidHide', this.keyboardWillHide);
+           // this is throwing errors in android, commented it out for now
+           // Keyboard.addListener('keyboardDidShow', this.keyboardWillShow);
+           // Keyboard.addListener('keyboardDidHide', this.keyboardWillHide);
         }
     }
 
