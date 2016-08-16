@@ -57,7 +57,9 @@ class Tabs extends Component {
             <View style={[styles.tabbarView, this.props.style, this.state.keyboardUp && styles.hidden]}>
                 {React.Children.map(this.props.children.filter(c=>c),(el)=>
                     <TouchableOpacity key={el.props.name+"touch"}
-                       style={[styles.iconView, this.props.iconStyle, (el.props.name || el.key) == selected ? this.props.selectedIconStyle || el.props.selectedIconStyle || {} : {} ]}
+                       style={[styles.iconView, this.props.iconStyle, (el.props.name || el.key) == selected ? this.props.selectedIconStyle || el.props.selectedIconStyle || {} : {} ,
+                       {flexDirection:'row'},
+                        el.props.name==='composeItemTabs'?{}:{flex:1}]}
                        onPress={()=>!self.props.locked && self.onSelect(el)}
                        onLongPress={()=>self.onSelect(el)}
                        activeOpacity={el.props.pressOpacity}>
@@ -74,8 +76,6 @@ var styles = StyleSheet.create({
         bottom:0,
         right:0,
         left:0,
-        height:50,
-        paddingTop:30,
         opacity:1,
         backgroundColor:'transparent',
         flexDirection: 'row',
@@ -83,8 +83,6 @@ var styles = StyleSheet.create({
         alignItems: 'center'
     },
     iconView: {
-        flex: 1,
-        height: 50,
         justifyContent: 'center',
         alignItems: 'center',
     },
